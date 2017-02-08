@@ -3,11 +3,13 @@ var path = require('path');
 module.exports = {
 
   // Starting point of app
-  entry: path.resolve(__dirname, '../src/index.jsx'),
+  entry: {
+    main: path.resolve(__dirname, '../src/index.jsx')
+  },
 
   // Defines the output path of the bundled file
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, '../app/build/'),
     publicPath: '/'
   },
