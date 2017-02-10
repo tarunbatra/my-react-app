@@ -46,5 +46,13 @@ module.exports = {
   },
 
   // Maps source for development
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
+
+  // Configures webpack-dev-server
+  devServer: {
+     port: 3000,            // Port of server
+     historyApiFallback: {
+       index: 'index.html'  // Always serve index.html to avoid SSR
+     }
+   }
 };
