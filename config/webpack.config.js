@@ -28,12 +28,12 @@ module.exports = {
       // Load CSS via css-loader and then add it to style tags in bundled file
       {
         test: /\.css$/,
-        loaders: 'style!css?sourceMap'
+        loaders: 'style-loader!css?sourceMap'
       },
       // Convert SASS to CSS and then add it to style tags in bundled file
       {
         test: /\.scss$/,
-        loaders: 'style!css?sourceMap!resolve-url!sass?sourceMap'
+        loaders: 'style-loader!css-loader?sourceMap!resolve-url-loader!sass-loader?sourceMap'
       }
     ]
   },
