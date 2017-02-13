@@ -1,3 +1,4 @@
 node_modules
 *.log
-app/build/*.js
+app/build/
+!app/build/.gitkeep
