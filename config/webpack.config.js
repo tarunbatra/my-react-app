@@ -50,9 +50,12 @@ module.exports = {
 
   // Configures webpack-dev-server
   devServer: {
-     port: 3000,            // Port of server
-     historyApiFallback: {
-       index: 'index.html'  // Always serve index.html to avoid SSR
-     }
-   }
+    hot: true,
+    inline: true,
+    contentBase: 'app',
+    port: 3000,            // Port of server
+    historyApiFallback: {
+      index: 'index.html'  // Always serve index.html to avoid SSR
+    }
+  }
 };

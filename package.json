@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -f ./app/build/*",
     "build": "webpack --config ./config/webpack.config.js",
-    "start": "webpack-dev-server --devtool eval --hot --config ./config/webpack.config.js --content-base ./app"
+    "start": "webpack-dev-server --config ./config/webpack.config.js"
   },
   "author": "Tarun Batra <tarun.batra00@gmail.com>",
   "license": "MIT",
