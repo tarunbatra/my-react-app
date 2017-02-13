@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -17,7 +18,8 @@ module.exports = {
 
   // Plugins for webpack
   plugins: [
-    new HtmlWebpackPlugin({         // Plugin for building final HTML
+    new webpack.HotModuleReplacementPlugin(), // Plugin for HMR
+    new HtmlWebpackPlugin({                   // Plugin for building final HTML
       inject: true,
       template: 'src/index.html'
     })
@@ -60,9 +62,10 @@ module.exports = {
 
   // Configures webpack-dev-server
   devServer: {
+    hot: true,
     inline: true,
-    contentBase: 'app',
-    port: 3000,            // Port of server
+    contentBase: './app',
+    port: 3000,                  // Port of server
     historyApiFallback: {
       index: 'build/index.html'  // Always serve index.html to avoid SSR
     }
