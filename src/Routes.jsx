@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Route, IndexRoute, Link, Redirect, browserHistory } from 'react-router';
 
-import NotFoundComponent from 'modules/NotFound/index.jsx';
+import NotFoundComponent from 'modules/NotFound';
 
 class Root extends React.Component {
   render() {
