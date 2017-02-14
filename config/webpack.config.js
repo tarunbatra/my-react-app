@@ -54,7 +54,8 @@ module.exports = {
     modules: [
       path.join(__dirname, '../src'),
       'node_modules'
-    ]
+    ],
+    "extensions": ['.js', '.jsx']
   },
 
   // Maps source for development
