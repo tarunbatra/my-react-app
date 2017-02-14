@@ -1,19 +1,13 @@
 import React from 'react';
 import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-router';
 
+import RootComponent from './modules/Root';
 import NotFoundComponent from './modules/NotFound';
-
-const Root = () =>
-  <div>
-    <h1 className="RootTitle">
-      Welcome to my-react-app
-    </h1>
-  </div>;
 
 const Routes = () =>
   <Router history={browserHistory}>
     <Route path="/">
-      <IndexRoute component={Root} />
+      <IndexRoute component={RootComponent} />
     </Route>
 
     { /* 404 Route */ }
