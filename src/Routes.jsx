@@ -3,13 +3,13 @@ import { Router, Route, IndexRoute, Redirect, browserHistory } from 'react-route
 
 import RootComponent from './modules/Root';
 import NotFoundComponent from './modules/NotFound';
-import ControlComponents from './modules/ControlComponents';
+import ProfileBuilder from './modules/ProfileBuilder';
 
 const Routes = () =>
   <Router history={browserHistory}>
     <Route path="/">
       <IndexRoute component={RootComponent} />
-      <Route path="/control-components" component={ControlComponents} />
+      <Route path="/profile-builder" component={ProfileBuilder} />
     </Route>
 
     { /* 404 Route */ }

@@ -16,7 +16,7 @@ function _generateProfile(state) {
   return profile ? `${profile}.` : '';
 }
 
-class ControlComponents extends React.Component {
+class ProfileBuilder extends React.Component {
   constructor(props) {
     super(props);
     this.state = { name: '', designation: null, tech: [], city: '', profile: '' };
@@ -105,4 +105,4 @@ class ControlComponents extends React.Component {
   }
 };
 
-export default ControlComponents;
+export default ProfileBuilder;
