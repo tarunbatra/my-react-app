@@ -1,23 +1,39 @@
 import React from 'react';
 
+function _generateTechText(technologies) {
+  return technologies.reduce((text, tech, index) => {
+    if (!index) return text += tech;
+    if (index === technologies.length - 1) return text += ` and ${tech}`;
+    return text += `, ${tech}`;
+  }, '') || 'nothing';
+}
+
+function _generateProfile(state) {
+  let profile = `${state.name}`;
+  state.designation && (profile += ` is a ${state.designation}`);
+  state.city && (profile += ` based out of ${state.city}`);
+  state.tech && (profile += ` who knows ${_generateTechText(state.tech)}`);
+  return profile ? `${profile}.` : '';
+}
+
 class ControlComponents extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: '', designation: null, tech: [], city: '' };
+    this.state = { name: '', designation: null, tech: [], city: '', profile: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
   handleSubmit(event) {
-    console.log(this.state);
+    this.setState({ profile: _generateProfile(this.state) });
     event.preventDefault();
   }
 
   handleChange(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
-  
+
   handleCheckboxChange(event) {
     const value = event.target.value;
     const tech = this.state.tech;
@@ -78,6 +94,12 @@ class ControlComponents extends React.Component {
           <br/>
           <input type="submit" value="Submit" />
         </form>
+        <div style={{ display: this.state.profile ? 'block' : 'none' }}>
+        <hr/>
+        <h3>Profile:</h3>
+          {this.state.profile}
+          <hr/>
+        </div>
       </div>
     );
   }
