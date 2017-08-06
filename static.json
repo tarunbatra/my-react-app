@@ -1,0 +1,4 @@
+{
+  "root": "app/build/",
+  "https_only": true
+}
