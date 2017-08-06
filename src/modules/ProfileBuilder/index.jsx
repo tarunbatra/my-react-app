@@ -11,8 +11,11 @@ function _generateTechText(technologies) {
 function _generateProfile(state) {
   let profile = `${state.name}`;
   state.designation && (profile += ` is a ${state.designation}`);
-  state.city && (profile += ` based out of ${state.city}`);
-  state.tech && (profile += ` who knows ${_generateTechText(state.tech)}`);
+  state.city && (profile += `${state.designation ? '' : ' is'} based out of ${state.city}`);
+  let filler = '';
+  state.designation && state.city && (filler = ' who');
+  !filler && (state.designation || state.city) && (filler = ' and');
+  state.tech && state.tech.length && (profile += `${filler} knows ${_generateTechText(state.tech)}`);
   return profile ? `${profile}.` : '';
 }
 
@@ -58,7 +61,7 @@ class ProfileBuilder extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             Name:
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} />
+            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
           </label>
           <br/>
           <label>
