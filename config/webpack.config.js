@@ -12,7 +12,7 @@ module.exports = {
   // Defines the output path of the bundled file
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, '../app/build/'),
+    path: path.resolve(__dirname, '../app/'),
     publicPath: '/'
   },
 
@@ -68,7 +68,7 @@ module.exports = {
     contentBase: './app',
     port: 3000,                  // Port of server
     historyApiFallback: {
-      index: 'build/index.html'  // Always serve index.html to avoid SSR
+      index: '/index.html'  // Always serve index.html to avoid SSR
     }
   }
 };
