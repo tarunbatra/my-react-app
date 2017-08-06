@@ -8,7 +8,11 @@ const Root = () =>
       Welcome to my-react-app
     </h1>
     <p>
-      Try our <Link to={`/profile-builder`}>Profile Builder</Link>.
+      Try our
+       <ul>
+         <li><Link to={`/profile-builder`}>Profile Builder</Link></li>
+         <li><Link to={`/todos`}>Todos</Link></li>
+       </ul>
     </p>
   </div>;
 
