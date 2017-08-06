@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config ./config/webpack.config.js",
-    "clean": "rm -f ./app/build/*",
+    "clean": "rm -f ./app/*.html ./app/*.js ./app/*.css",
     "lint": "eslint ./src --ext .js,.jsx",
     "start": "webpack-dev-server --config ./config/webpack.config.js"
   },
